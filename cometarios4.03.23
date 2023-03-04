@@ -1,0 +1,31 @@
+class Aprendiz:                                     #se crea una clase llamada aprendiz
+    def __init__(self,nombre):                      #se abre un constructor con el parametro nombre
+        self.__nombre=nombre                        #se agrega un atributo a la clase, se hace privado con "__"
+        self.__cursos=[]                            #se agrga una lista vacia a la clase
+    def agregarCurso(self,nombreCurso):             #se define un metodo con el parametro "nombrecurso"
+        self.__cursos.append(nombreCurso)           #se agregan valores a la lista
+    def verCursos(self):                            #se crea un metodo 
+        return self.__cursos                        #se retorna la lista con los valores agregados
+
+class Curso:                                        #se crea una clase llamada curso
+    def __init__(self,nombreCurso):                 #se abre un constructor con el parametro "nombrecurso"
+        self.__nombreCurso=nombreCurso              #se agrega un atributo privado a la clase llamado "nombrecurso"
+
+    def getNombreCurso(self):                       #se crea un metodo get 
+        return self.__nombreCurso                   #se retorna el atributo "nombrecurso"
+    
+ob=Aprendiz('Miguel')                               #se crea un objeto de la clase "aprendiz" con el parametro "miguel" 
+c1=Curso('Python Basico')                           #se crea un objeto de la clase "curso" con el parametro "python basico"
+c2=Curso('Python Intermedio')                       #se crea un objeto de la clase "curso" con el parametro "python intermedio"
+c3=Curso('Java Basico')                             #se crea un objeto de la clase "curso" con el parametro "java basico"
+
+ob.agregarCurso(c1)                                 #con el metodo agregarcurso se agrega el valor del objeto "c1" a la lista de la clase aprendiz
+ob.agregarCurso(c2)                                 #con el metodo agregarcurso se agrega el valor del objeto "c2" a la lista de la clase aprendiz
+ob.agregarCurso(c3)                                 #con el metodo agregarcurso se agrega el valor del objeto "c3" a la lista de la clase aprendiz
+
+for curso in ob.verCursos():                        #
+    print(curso.getNombreCurso())                   #
+
+del ob                                              #
+#print(ob)
+print('.....',c1.getNombreCurso())
